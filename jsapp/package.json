@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npx tsc",
     "demo": "ts-node app/demo.ts",
+    "ts": "ts-node",
     "test": "jest",
     "test:cover": "jest --coverage"
   },
