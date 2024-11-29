@@ -21,3 +21,6 @@ Dummy is a no-op, while Spy records calls.
 Fake is a simplified implementation, while Stub provides canned answers.
 Spy is hand-crafted, while Mock is pre-programmed with expectations.
 
+## Note
+
+**Test Double** meaning from a stunt person in movie that use for replace production object for testing purposes.
