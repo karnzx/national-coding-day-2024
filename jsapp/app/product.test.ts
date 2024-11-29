@@ -22,7 +22,7 @@ function test(title: string, callback: () => void) {
 // products.ts getProductPrice function
 
 // Dummy object: that not affact the test use for pass complie
-test("error product name and product id are required", () => {
+test("Dummy: error product name and product id are required", () => {
   const dummy = {
     search: null,
   };
@@ -35,7 +35,7 @@ test("error product name and product id are required", () => {
 
 // Stub: return a canned value not null
 // object always return the value no matter what and only single test use.
-test("error product not found", () => {
+test("Stub: error product not found", () => {
   const stub = {
     search: (productName: string, productId: string) => {
       return null;
@@ -48,7 +48,7 @@ test("error product not found", () => {
   }
 });
 
-test("get product price", () => {
+test("Stub: get product price", () => {
   const product: Product = {
     productName: "Laptop",
     productId: "LAPTOP-123",
