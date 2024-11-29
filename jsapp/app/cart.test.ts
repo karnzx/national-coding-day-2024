@@ -1,9 +1,8 @@
-import { subtotalPrice } from "./cart";
+import { subtotalPrice, discountedPrice } from "./cart";
 
 /* console.log(subtotalPrice(999.99, 3).toFixed(2) === "2999.97") */
 /* console.log(subtotalPrice(999.99, 2).toFixed(2) === "1999.98") */
 /* console.log(subtotalPrice(999.99, 1).toFixed(2) === "999.99") */
-
 
 // true, true, true. it works! but could be better for readability
 // let's refactor the console log to print ✅ PASS or ❌ FAIL instead of true or false
@@ -18,12 +17,12 @@ function expect(actual: any) {
   return {
     toEqual: (expected: any) => {
       if (actual === expected) {
-        console.log(" ✅ PASS")
+        console.log(" ✅ PASS");
       } else {
-        console.log(` ❌ FAIL: want ${expected} but got ${actual}`)
+        console.log(` ❌ FAIL: want ${expected} but got ${actual}`);
       }
-    }
-  }
+    },
+  };
 }
 
 /* expect(subtotalPrice(999.99, 3).toFixed(2)).toEqual("2999.97") */
@@ -39,12 +38,20 @@ function test(title: string, callback: () => void) {
 }
 
 test("should calculate subtotal price correctly", () => {
-  const want = "2999.97"
+  const want = "2999.97";
 
-  const actual = subtotalPrice(999.99, 3).toFixed(2)
+  const actual = subtotalPrice(999.99, 3).toFixed(2);
 
-  expect(actual).toEqual(want)
-})
+  expect(actual).toEqual(want);
+});
+
+test("should calculate discount price correctly", () => {
+  const want = "97.00";
+
+  const actual = discountedPrice(100, 3).toFixed(2);
+
+  expect(actual).toEqual(want);
+});
 
 // Challenge: write your own test with you own style for the following functions:
 // 1. test discountedPrice function
