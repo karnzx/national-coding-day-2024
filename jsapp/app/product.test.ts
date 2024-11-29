@@ -34,9 +34,6 @@ function test(title: string, callback: () => void) {
   console.groupEnd();
 }
 
-// Challenge: write your own test with you own style for the following functions:
-// products.ts getProductPrice function
-
 // Dummy object: that not affact the test use for pass complie
 test("Dummy: error product name and product id are required", () => {
   const dummy = {
@@ -49,6 +46,7 @@ test("Dummy: error product name and product id are required", () => {
   }
 });
 
+// --------------------------------------------------------------------------------
 // Stub: return a canned value not null
 // object always return the value no matter what and only single test use.
 test("Stub: error product not found", () => {
@@ -81,6 +79,7 @@ test("Stub: get product price", () => {
   expect(actual).toEqual(999.99);
 });
 
+// --------------------------------------------------------------------------------
 // Fake: simplified version of real implementation
 // He told that Fake is Stub with If condition and can be resuable
 const fakeFinder = {
@@ -111,6 +110,7 @@ test("Fake: get product not found", () => {
   }
 });
 
+// --------------------------------------------------------------------------------
 // Spy: Keeo track of the call made to the function
 // Dynamic language need to check for function parameter type too.
 
@@ -161,6 +161,7 @@ test("Spy: should call search with productName and productId", () => {
   expect(spy).toHaveBeenCalledWith("Laptop", "LAPTOP-123");
 });
 
+// --------------------------------------------------------------------------------
 // Mocks: are pre-programmed with expectation which from a specification
 // Mocks are used to define expectations about function calls.
 // Spies are used to track function call without pre-setting expection
