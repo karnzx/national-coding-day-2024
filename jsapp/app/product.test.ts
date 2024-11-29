@@ -32,3 +32,18 @@ test("error product name and product id are required", () => {
     expect(error.message).toEqual("Product name and product id are required");
   }
 });
+
+// Stub: return a canned value not null
+// object always return the value no matter what and only single test use.
+test("error product not found", () => {
+  const stub = {
+    search: (productName: string, productId: string) => {
+      return null;
+    },
+  };
+  try {
+    getProductPrice(stub, "LAPTOP", "1234");
+  } catch (error) {
+    expect(error.message).toEqual("Product not found");
+  }
+});
