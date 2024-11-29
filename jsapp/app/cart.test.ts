@@ -55,7 +55,6 @@ test("should calculate discount price correctly", () => {
 
 // Challenge: write your own test with you own style for the following functions:
 // 1. test discountedPrice function
-// 2. products.ts getProductPrice function
 
 // Optional Challenge: write tests for the following functions:
 // - test totalPrice function
